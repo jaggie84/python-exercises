@@ -9,6 +9,6 @@ print("Done")
 while True:
   answer = input('Say when: ')
   if answer.lower() == 'when':
-    pass
+    break
 
 print("Cheese")
