@@ -1,4 +1,3 @@
-# Phonebook app
 import pickle
 
 book = {}
@@ -28,17 +27,15 @@ def intro():
     3. Delete an entry
     4. List all entries
     5. Quit""")
-    #use pickle to save data 
-    #use pickle to call saved data
         ans = int(input("Please select a menu option 1-5: "))
         if ans == 1:
-            ent = input("Please enter an entry for lookup: ")
+            ent = input("Please enter an entry to lookup: ")
             ent = ent.lower()
             load_entries()
             if ent in book:
                 print (book[ent])
             else:
-                print ("There is no listing for that person.")
+                print ("Unfortunately, there is no listing for that person.")
         elif ans == 2:
             name = input("Please enter full name: ")
             name = name.lower()
