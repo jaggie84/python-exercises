@@ -1,16 +1,23 @@
 # Phonebook app
 import pickle
+
+book = {}
+
 def load_entries():
     global book
-    with open ('data.pickle', 'rb') as fh:
-        book = pickle.load(fh)
+    try:
+        with open ('phonebook.pickle', 'rb') as fh:
+            book = pickle.load(fh)
+    except:
+        book = {}
+        
 load_entries()
 
 def save_entries():
-    with open('data.pickle', 'wb') as fh:
+    with open('phonebook.pickle', 'wb') as fh:
         pickle.dump(book, fh)
         
-book = {}
+
 
 def intro():
     while True:
@@ -33,7 +40,7 @@ def intro():
             else:
                 print ("There is no listing for that person.")
         elif ans == 2:
-            name = input("Full name: ")
+            name = input("Please enter full name: ")
             name = name.lower()
             num = input("Phone number: ")
             email = input("Email: ")
@@ -41,13 +48,14 @@ def intro():
             book[name]['phone'] = num
             book[name]['email'] = email
             save_entries()
-            print ('An entry for ' + name + " was saved.")
+            print ('An entry for ' + name.capitalize() + " was saved.")
             
         elif ans == 3:
-            name = input("Who would you like to delete? ")
+            name = input("Which entry would you like to delete? ")
             name = name.lower()
             load_entries()
             del book[name]
+            print("The entry for", name.capitalize(), "was deleted as requested.")
             save_entries()
         elif ans == 4:
             load_entries()
