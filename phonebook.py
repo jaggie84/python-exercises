@@ -30,9 +30,9 @@ def intro():
     5. Quit""")
     #use pickle to save data 
     #use pickle to call saved data
-        ans = int(input("What would you like to do? Please select a # (1-5). "))
+        ans = int(input("Please select a menu option 1-5: "))
         if ans == 1:
-            ent = input("Who would you like to look up? ")
+            ent = input("Please enter an entry for lookup: ")
             ent = ent.lower()
             load_entries()
             if ent in book:
@@ -62,9 +62,9 @@ def intro():
             for key, value in book.items():
                 print ('{}: {}'.format(key, value))
         elif ans == 5:
-            print ("Thank you for using the phonebook!")
+            print ("Thanks, come again soon!")
             break
         else: 
-            print ("Please enter a number 1-5")
+            print ("Please enter a number 1-5.")
 
 intro()
