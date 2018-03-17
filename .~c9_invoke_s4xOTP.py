@@ -1,2 +1,0 @@
-name = in
-print(input)
