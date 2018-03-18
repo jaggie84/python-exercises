@@ -1,4 +1,4 @@
-f = input("\n Hello, Please enter the file name you'd like to open: ")
+f = input("Hello, Please enter the file name you'd like to open: ")
 file_handle = open(f, 'r') 
 while True:
   char = file_handle.read()
