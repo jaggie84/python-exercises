@@ -1,4 +1,4 @@
-file_handle = open('family_tree.txt', 'r')
+file_handle = open('test.py', 'r')
 while True:
   char = file_handle.read()
   if not char:
