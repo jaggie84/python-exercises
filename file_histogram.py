@@ -5,9 +5,10 @@ file_handle = open(which, 'r')
 counts = {}
 
 for char in file_handle:
-    if char not in counts:
-        counts[char] = 1
+    for letter in char:
+      if char not in counts:
+        counts[letter] = 1
     else:
-        counts[char] += 1
+        counts[letter] += 1
 print(counts)
 file_handle.close()
